@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aevora Studio — Full Stack & MERN Development</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#10130f">
+<meta name="description" content="Aevora Studio builds polished websites, e-commerce stores, and custom software for ambitious businesses.">
+<title>Aevora Studio — Digital Experiences, Built to Grow</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0b;
-    --surface: #111112;
-    --card: #181819;
-    --blue: #c49a52;
-    --blue-glow: rgba(196,154,82,0.16);
-    --cyan: #e8d4a4;
-    --white: #f4f1eb;
-    --muted: #a8a39a;
-    --border: rgba(232,212,164,0.2);
-    --font-head: 'Playfair Display', serif;
+    --bg: #10130f;
+    --surface: #171c16;
+    --card: #1d241c;
+    --blue: #c2f36b;
+    --blue-glow: rgba(194,243,107,0.12);
+    --cyan: #e5ebdf;
+    --white: #f4f5ef;
+    --muted: #a0a99a;
+    --border: rgba(194,243,107,0.16);
+    --font-head: 'Space Grotesk', sans-serif;
     --font-body: 'DM Sans', sans-serif;
   }
 
@@ -29,7 +33,7 @@
     color: var(--white);
     font-family: var(--font-body);
     overflow-x: hidden;
-    cursor: none;
+    cursor: auto;
   }
 
   /* CUSTOM CURSOR */
@@ -75,12 +79,14 @@
   }
   .logo {
     font-family: var(--font-head);
-    font-size: 1.4rem; font-weight: 800;
-    letter-spacing: -1px;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-size: 0.95rem; font-weight: 700;
+    letter-spacing: -0.3px;
     color: var(--white);
     text-decoration: none;
   }
-  .logo span { color: var(--blue); }
+  .logo img { width: 38px; height: 38px; object-fit: cover; object-position: center 38%; border-radius: 9px; border: 1px solid var(--border); }
+  .logo span { color: var(--muted); }
   nav ul { display: flex; gap: 2rem; list-style: none; }
   nav ul a {
     color: var(--muted); text-decoration: none;
@@ -94,10 +100,10 @@
     background: var(--blue);
     color: white; border: none; border-radius: 6px;
     font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
-    cursor: none; letter-spacing: 0.3px;
+    cursor: pointer; letter-spacing: 0.3px;
     transition: background 0.2s, box-shadow 0.2s;
   }
-  .nav-btn:hover { background: var(--cyan); color: var(--bg); box-shadow: 0 0 20px rgba(232,212,164,0.3); }
+  .nav-btn:hover { background: var(--cyan); color: var(--bg); box-shadow: 0 0 20px rgba(194,243,107,0.22); }
 
   /* HERO */
   #hero {
@@ -159,7 +165,7 @@
     background: var(--blue);
     color: white; border: none; border-radius: 8px;
     font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
-    cursor: none; transition: all 0.25s;
+    cursor: pointer; transition: all 0.25s;
     position: relative; overflow: hidden;
   }
   .btn-primary::after {
@@ -167,7 +173,7 @@
     background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(196,154,82,0.35); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194,243,107,0.24); }
   .btn-primary:hover::after { opacity: 1; }
 
   .btn-outline {
@@ -175,7 +181,7 @@
     background: transparent;
     color: var(--white); border: 1.5px solid var(--border); border-radius: 8px;
     font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
-    cursor: none; transition: all 0.25s;
+    cursor: pointer; transition: all 0.25s;
   }
   .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
 
@@ -189,10 +195,10 @@
     position: relative;
     width: min(460px, 42vw); height: min(345px, 31.5vw);
     padding: 10px;
-    background: linear-gradient(145deg, rgba(232,212,164,0.15), rgba(255,255,255,0.03));
-    border: 1px solid rgba(232,212,164,0.28);
+    background: linear-gradient(145deg, rgba(194,243,107,0.12), rgba(255,255,255,0.03));
+    border: 1px solid rgba(194,243,107,0.22);
     border-radius: 24px;
-    box-shadow: 0 28px 70px rgba(0,0,0,0.5), 0 0 70px rgba(196,154,82,0.1);
+    box-shadow: 0 28px 70px rgba(0,0,0,0.5), 0 0 70px rgba(194,243,107,0.08);
   }
   .profile-ring::before {
     content: '';
@@ -206,7 +212,7 @@
   .profile-ring::after {
     content: '';
     position: absolute; inset: -22px;
-    border: 1px dashed rgba(232,212,164,0.2);
+    border: 1px dashed rgba(194,243,107,0.18);
     border-radius: 34px;
     animation: spin 10s linear infinite reverse;
   }
@@ -226,7 +232,7 @@
     display: flex; align-items: center; justify-content: center;
     font-family: var(--font-head); font-size: 5rem; font-weight: 800;
     color: var(--white);
-    box-shadow: 0 0 60px rgba(196,154,82,0.22);
+    box-shadow: 0 0 60px rgba(194,243,107,0.16);
   }
 
   /* FLOATING CARDS */
@@ -253,8 +259,8 @@
   .bg-glow {
     position: absolute; border-radius: 50%; pointer-events: none; filter: blur(120px);
   }
-  .bg-glow.g1 { width: 500px; height: 500px; background: rgba(196,154,82,0.08); top: -100px; left: -200px; }
-  .bg-glow.g2 { width: 400px; height: 400px; background: rgba(232,212,164,0.05); bottom: 0; right: -100px; }
+  .bg-glow.g1 { width: 500px; height: 500px; background: rgba(194,243,107,0.08); top: -100px; left: -200px; }
+  .bg-glow.g2 { width: 400px; height: 400px; background: rgba(194,243,107,0.05); bottom: 0; right: -100px; }
 
   /* SECTIONS */
   section { padding: 6rem 2rem; }
@@ -295,6 +301,8 @@
   }
   .contact-item a { color: var(--white); text-decoration: none; transition: color 0.2s; }
   .contact-item a:hover { color: var(--cyan); }
+  .contact-whatsapp { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.35rem; color: var(--blue) !important; font-size: 0.82rem; }
+  .contact-whatsapp svg { width: 17px; height: 17px; }
 
   /* SKILLS */
   #skills { background: var(--bg); }
@@ -313,7 +321,7 @@
     background: linear-gradient(135deg, var(--blue-glow), transparent);
     opacity: 0; transition: opacity 0.3s;
   }
-  .skill-card:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: 0 12px 40px rgba(196,154,82,0.15); }
+  .skill-card:hover { transform: translateY(-4px); border-color: var(--blue); box-shadow: 0 12px 40px rgba(194,243,107,0.12); }
   .skill-card:hover::before { opacity: 1; }
   .skill-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
   .skill-name { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
@@ -331,7 +339,7 @@
     position: relative; overflow: hidden;
     transition: all 0.3s;
   }
-  .exp-card:hover { border-color: var(--blue); box-shadow: 0 0 50px rgba(196,154,82,0.12); }
+  .exp-card:hover { border-color: var(--blue); box-shadow: 0 0 50px rgba(194,243,107,0.12); }
   .exp-card::after {
     content: '';
     position: absolute; top: 0; left: 0; right: 0;
@@ -351,49 +359,75 @@
 
   /* PROJECTS */
   #projects { background: var(--surface); }
+  .projects-heading {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;
+  }
+  .projects-heading .section-title { margin-bottom: 0; }
+  .projects-intro { max-width: 360px; color: var(--muted); line-height: 1.7; font-size: 0.92rem; }
+  .project-filters { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 2rem 0; }
+  .project-filter {
+    padding: 0.55rem 1rem; border: 1px solid var(--border); border-radius: 999px;
+    color: var(--muted); background: transparent; font: inherit; font-size: 0.8rem;
+    cursor: pointer; transition: color 0.2s, background 0.2s, border-color 0.2s;
+  }
+  .project-filter:hover, .project-filter[aria-pressed="true"] {
+    color: var(--bg); background: var(--blue); border-color: var(--blue);
+  }
+  .project-status { margin: 0 0 1rem; color: var(--muted); font-size: 0.78rem; }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
   }
   .project-card {
-    background: linear-gradient(180deg, rgba(15,21,37,0.96), rgba(10,13,23,0.98));
+    background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 20px;
+    border-radius: 5px;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.2s ease;
+    transform-style: preserve-3d;
     position: relative;
     box-shadow: 0 20px 45px rgba(4, 7, 18, 0.28);
   }
+  .project-card[hidden] { display: none; }
   .project-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(196, 154, 82, 0.5);
-    box-shadow: 0 28px 50px rgba(196, 154, 82, 0.18);
+    transform: translateY(-5px);
+    border-color: rgba(194, 243, 107, 0.42);
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.3);
   }
   .project-media {
     position: relative;
-    height: 210px;
+    height: auto;
+    aspect-ratio: 1.58 / 1;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     padding: 1.1rem 1.1rem 1.2rem;
     overflow: hidden;
     border-bottom: 1px solid var(--border);
-    background: linear-gradient(135deg, rgba(196,154,82,0.25), rgba(232,212,164,0.12));
+    background: linear-gradient(135deg, rgba(194,243,107,0.25), rgba(229,235,223,0.12));
   }
+  .project-image {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .project-card:hover .project-image { transform: scale(1.045); }
   .project-media::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 40%);
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(8,12,8,0.05) 32%, rgba(8,12,8,0.62) 100%);
     pointer-events: none;
   }
-  .project-media--blue { background: linear-gradient(135deg, #17130d 0%, #40321d 45%, #b8873c 100%); }
-  .project-media--cyan { background: linear-gradient(135deg, #111314 0%, #343638 45%, #aaa9a3 100%); }
-  .project-media--purple { background: linear-gradient(135deg, #171416 0%, #3c3032 45%, #9d7860 100%); }
-  .project-media--green { background: linear-gradient(135deg, #0d1513 0%, #26352d 45%, #7b8a73 100%); }
-  .project-media--orange { background: linear-gradient(135deg, #1d130d 0%, #49301c 45%, #c18443 100%); }
-  .project-media--red { background: linear-gradient(135deg, #1d1112 0%, #432727 45%, #a66c58 100%); }
+  .project-media--blue { background: linear-gradient(135deg, #202a19, #788b4e); }
+  .project-media--cyan { background: linear-gradient(135deg, #172523, #5d8277); }
+  .project-media--purple { background: linear-gradient(135deg, #211c2a, #786893); }
+  .project-media--green { background: linear-gradient(135deg, #18251a, #61826a); }
+  .project-media--orange { background: linear-gradient(135deg, #302318, #987247); }
+  .project-media--red { background: linear-gradient(135deg, #2c1b1b, #966265); }
   .project-badge {
     position: relative;
     z-index: 1;
@@ -401,7 +435,7 @@
     align-items: center;
     gap: 6px;
     padding: 0.38rem 0.7rem;
-    background: rgba(8, 13, 24, 0.42);
+    background: rgba(12, 16, 11, 0.78);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 999px;
     font-size: 0.7rem;
@@ -422,18 +456,18 @@
     position: relative;
     z-index: 1;
     font-family: var(--font-head);
-    font-size: clamp(2rem, 2vw, 2.6rem);
+    font-size: clamp(1.4rem, 2vw, 2.2rem);
     font-weight: 800;
     letter-spacing: -1px;
     color: rgba(255,255,255,0.94);
     text-shadow: 0 10px 30px rgba(0,0,0,0.25);
   }
   .project-content {
-    padding: 1.35rem 1.3rem 1.45rem;
+    padding: 1rem 0.15rem 1.15rem;
   }
   .project-title {
     font-family: var(--font-head);
-    font-size: 1.25rem;
+    font-size: 1.08rem;
     font-weight: 700;
     margin-bottom: 0.55rem;
     color: var(--white);
@@ -443,7 +477,7 @@
     font-size: 0.9rem;
     line-height: 1.7;
     margin-bottom: 1rem;
-    min-height: 82px;
+    min-height: 68px;
   }
   .project-tech {
     display: flex;
@@ -453,8 +487,8 @@
   }
   .tech-tag {
     padding: 0.28rem 0.7rem;
-    background: rgba(196, 154, 82, 0.08);
-    border: 1px solid rgba(196, 154, 82, 0.24);
+    background: rgba(194, 243, 107, 0.06);
+    border: 1px solid rgba(194, 243, 107, 0.16);
     border-radius: 20px;
     font-size: 0.72rem;
     color: var(--cyan);
@@ -485,16 +519,49 @@
     transform: translateY(-2px);
   }
   .project-link.live {
-    background: linear-gradient(135deg, #b78335, var(--blue));
-    color: white;
+    background: var(--blue);
+    color: var(--bg);
     border-color: transparent;
-    box-shadow: 0 12px 26px rgba(196, 154, 82, 0.28);
+    box-shadow: 0 10px 24px rgba(194, 243, 107, 0.15);
   }
   .project-link.live:hover {
-    background: linear-gradient(135deg, var(--cyan), #f5ead0);
+    background: linear-gradient(135deg, var(--cyan), #f4f5ef);
     color: var(--bg);
-    box-shadow: 0 14px 32px rgba(232,212,164,0.24);
+    box-shadow: 0 14px 32px rgba(194,243,107,0.2);
   }
+
+  /* SERVICES, PROCESS & CONTACT */
+  #services, #process { background: var(--bg); }
+  .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--border); background: var(--border); }
+  .service-card { min-height: 230px; padding: 1.7rem; background: var(--bg); transition: background 0.25s, transform 0.25s; }
+  .service-card:hover { background: var(--surface); transform: translateY(-3px); }
+  .service-number { color: var(--blue); font-size: 0.75rem; letter-spacing: 1px; }
+  .service-card h3 { margin: 1.5rem 0 0.7rem; font: 600 1.1rem var(--font-head); }
+  .service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+  .service-tags, .stack-list { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; }
+  .service-tags span, .stack-list span { padding: 0.34rem 0.7rem; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 0.72rem; }
+  .stack-panel { padding: 2rem; border: 1px solid var(--border); background: var(--surface); }
+  .stack-list { gap: 0.7rem; margin-top: 0; }
+  .stack-list span { padding: 0.65rem 0.95rem; color: var(--white); font-size: 0.82rem; }
+  .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+  .process-step { border-top: 1px solid var(--border); padding-top: 1.2rem; }
+  .process-step span { color: var(--blue); font-size: 0.76rem; letter-spacing: 1px; }
+  .process-step h3 { margin: 0.7rem 0 0.45rem; font: 600 1rem var(--font-head); }
+  .process-step p { color: var(--muted); font-size: 0.84rem; line-height: 1.65; }
+  #contact { background: var(--blue); color: var(--bg); }
+  #contact .section-tag, #contact .section-title span { color: var(--bg); }
+  #contact .section-tag::after { background: rgba(16,19,15,0.25); }
+  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: start; }
+  .contact-copy { color: rgba(16,19,15,0.74); line-height: 1.75; }
+  .contact-copy a { color: var(--bg); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; padding: 1.4rem; background: rgba(244,245,239,0.9); }
+  .inquiry-form label { display: grid; gap: 0.35rem; color: #4c5545; font-size: 0.74rem; }
+  .inquiry-form label:nth-child(3), .inquiry-form label:nth-child(4), .inquiry-form button, .form-note { grid-column: 1 / -1; }
+  .inquiry-form input, .inquiry-form select, .inquiry-form textarea { width: 100%; padding: 0.75rem; border: 1px solid #d5dacd; border-radius: 2px; color: #20251d; background: white; font: 0.86rem var(--font-body); }
+  .inquiry-form textarea { min-height: 110px; resize: vertical; }
+  .inquiry-form button { padding: 0.8rem 1rem; border: 0; background: #1b2318; color: var(--white); font: 600 0.85rem var(--font-body); cursor: pointer; transition: background 0.2s; }
+  .inquiry-form button:hover { background: #303d27; }
+  .form-note { color: #65705d; font-size: 0.72rem; line-height: 1.5; }
 
   /* FOOTER */
   footer {
@@ -504,6 +571,7 @@
     text-align: center;
   }
   .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-logo { width: 68px; height: 68px; object-fit: cover; object-position: center 38%; border-radius: 14px; border: 1px solid var(--border); margin-bottom: 0.8rem; }
   .footer-name { font-family: var(--font-head); font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
   .footer-tagline { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
   .social-links { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
@@ -514,8 +582,17 @@
     text-decoration: none; font-size: 1rem;
     transition: all 0.2s; color: var(--muted);
   }
-  .social-link:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(196,154,82,0.15); }
+  .social-link:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(194,243,107,0.12); }
   .footer-copy { font-size: 0.78rem; color: var(--muted); }
+  .whatsapp-float {
+    position: fixed; right: 1.35rem; bottom: 1.35rem; z-index: 1001;
+    width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; background: #25d366; color: #fff;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.32);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .whatsapp-float:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 12px 32px rgba(37,211,102,0.32); }
+  .whatsapp-float svg { width: 30px; height: 30px; }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -549,8 +626,33 @@
   @media(max-width: 768px) {
     .hero-grid, .about-grid { grid-template-columns: 1fr; }
     .hero-visual { display: flex; margin-top: 2rem; }
-    nav ul { display: none; }
+    .reveal-left, .reveal-right { transform: translateY(24px); transition: opacity 0.7s ease, transform 0s; }
+    .reveal-left.visible, .reveal-right.visible { transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+    nav { padding: 0.8rem 1rem; }
+    nav ul { display: flex; gap: 0.8rem; }
+    nav ul a { font-size: 0.68rem; }
+    nav .nav-btn { padding: 0.5rem 0.7rem; font-size: 0.72rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .profile-ring { width: min(460px, 88vw); height: auto; aspect-ratio: 4 / 3; }
+  }
+  @media(max-width: 560px) {
+    nav ul { display: none; }
+  }
+  @media(max-width: 480px) {
+    section { padding: 4.5rem 1.15rem; }
+    .hero-title { letter-spacing: -2px; }
+    .service-grid, .process-grid { grid-template-columns: 1fr; }
+    .inquiry-form { grid-template-columns: 1fr; padding: 1rem; }
+    .inquiry-form label, .inquiry-form label:nth-child(3), .inquiry-form label:nth-child(4), .inquiry-form button, .form-note { grid-column: 1; }
+  }
+  @media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+  @media(hover: none) {
+    .cursor, .cursor-ring { display: none; }
   }
 </style>
 </head>
@@ -562,14 +664,14 @@
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="#hero">AS<span>.</span></a>
+  <a class="logo" href="#hero" aria-label="Aevora Studio home"><img src="assets/images/ae.jpeg" alt=""><span>Aevora Studio</span></a>
   <ul>
     <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
   </ul>
-  <a class="nav-btn" href="#about">Let's Talk</a>
+  <a class="nav-btn" href="#contact">Let's Talk</a>
 </nav>
 <!-- HERO -->
 <section id="hero">
@@ -579,30 +681,30 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        Open to Work — Full Stack & MERN Stack Developer
+        Independent digital studio · Karachi, Pakistan
       </div>
       <h1 class="hero-title">
-        AEVORA<br>
-        <span class="line2">STUDIO</span><span class="cursor-text"></span>
+        We make<br>
+        <span class="line2">digital feel different.</span><span class="cursor-text"></span>
       </h1>
       <p class="hero-desc">
-        Full Stack and MERN Stack Developer from Karachi, passionate about building modern, responsive, and user-focused web applications. Skilled in MongoDB, Express, React, Node.js, PHP, Laravel, MySQL, JavaScript & more.
+        Thoughtful websites, standout e-commerce stores, and custom software—designed with care and engineered to help ambitious businesses grow.
       </p>
       <div class="hero-btns">
         <a class="btn-primary" href="#projects">View Our Work</a>
-        <a class="btn-outline" href="#skills">Explore Skills ↓</a>
+        <a class="btn-outline" href="#contact">Start a project ↗</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="profile-ring">
-        <img src="assets/images/ae.jpeg" alt="Aevora Studio" class="profile-img">
+        <img src="assets/images/ae.jpeg" alt="Aevora Studio brand identity" class="profile-img">
         <div class="float-card c1">
-          <div class="fc-label">Experience</div>
-          <div class="fc-val">2+ Years Training</div>
+          <div class="fc-label">Thoughtful digital craft</div>
+          <div class="fc-val">Design meets engineering</div>
         </div>
         <div class="float-card c2">
-          <div class="fc-label">Tech Stack</div>
-          <div class="fc-val">PHP · Laravel · MySQL</div>
+          <div class="fc-label">From first sketch to launch</div>
+          <div class="fc-val">One focused studio</div>
         </div>
     </div>
   </div>
@@ -613,12 +715,12 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="reveal-left">
-        <div class="section-tag">Who I Am</div>
-        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="section-tag">A little about us</div>
+        <h2 class="section-title">Good work speaks <span>for itself.</span></h2>
         <div class="about-text">
-          <p>Highly motivated and detail-oriented Full Stack and MERN Stack Developer based in Karachi with a strong passion for building modern, responsive, and user-focused websites and web applications.</p>
-          <p>I completed one year of professional web development training at Aptech North Karachi, working on real-world projects including business websites, landing pages, login systems, and e-commerce layouts.</p>
-          <p>Currently enrolled in a 3-Year ACCPI Diploma of Software Engineering at Aptech, continuously sharpening my skills across frontend and backend development and ready to contribute to professional software projects.</p>
+          <p>Aevora Studio is an independent digital studio in Karachi, Pakistan, bringing thoughtful design and practical software engineering together to create useful, memorable online experiences.</p>
+          <p>Our work spans custom web applications, business websites, e-commerce storefronts, and WordPress builds—each shaped around the people who use it and the teams who maintain it.</p>
+          <p>Built on hands-on web development training and an ongoing software engineering education, our approach is collaborative, detail-oriented, and focused on delivering a polished result from first conversation to launch.</p>
         </div>
       </div>
       <div class="reveal-right">
@@ -628,9 +730,12 @@
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
-              <div style="font-size:0.72rem;color:var(--muted);margin-bottom:2px;">Phone</div>
-              <a href="tel:03172807217">03172807217</a><br>
-              <a href="tel:03702356902">03702356902</a>
+              <div style="font-size:0.72rem;color:var(--muted);margin-bottom:2px;">Call or WhatsApp</div>
+              <a href="tel:+923172807217">+92 317 2807217</a><br>
+              <a class="contact-whatsapp" href="https://wa.me/923172807217" target="_blank" rel="noopener noreferrer" aria-label="Message Aevora Studio on WhatsApp at +92 317 2807217">
+                <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3a12.76 12.76 0 0 0-10.9 19.4L3.5 29l6.78-1.77A12.76 12.76 0 1 0 16.02 3Zm0 23.2a10.4 10.4 0 0 1-5.3-1.45l-.38-.23-4.02 1.05 1.07-3.92-.25-.4a10.4 10.4 0 1 1 8.88 4.95Zm5.7-7.8c-.31-.16-1.83-.9-2.12-1-.28-.1-.49-.16-.7.16-.21.31-.8 1-1 1.2-.18.21-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.54.16-.19.21-.32.31-.52.1-.21.05-.39-.03-.54-.08-.16-.7-1.68-.96-2.3-.25-.59-.5-.51-.7-.52l-.6-.01c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.56s1.1 2.97 1.26 3.18c.15.2 2.16 3.3 5.24 4.63.73.32 1.3.51 1.74.65.73.23 1.4.2 1.93.12.59-.09 1.83-.75 2.09-1.48.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
+                WhatsApp directly
+              </a>
             </div>
           </div>
           <div class="contact-item">
@@ -660,11 +765,57 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag reveal">What we do</div>
+    <h2 class="section-title reveal">Big picture.<br><span>Careful details.</span></h2>
+    <div class="service-grid">
+      <article class="service-card reveal">
+        <span class="service-number">01 / DEVELOPMENT</span>
+        <h3>Full-stack web development</h3>
+        <p>Fast, responsive web apps shaped around real business needs, from polished interfaces through to dependable backend logic.</p>
+        <div class="service-tags"><span>MERN</span><span>MEAN</span><span>MEVN</span><span>React</span><span>Node.js</span></div>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-number">02 / E-COMMERCE</span>
+        <h3>WordPress, Shopify &amp; online stores</h3>
+        <p>Flexible, easy-to-manage stores and business websites built to make browsing, buying, and updating content feel effortless.</p>
+        <div class="service-tags"><span>WordPress</span><span>WooCommerce</span><span>Shopify</span><span>eBay</span></div>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-number">03 / PRODUCT DESIGN</span>
+        <h3>UI/UX &amp; graphic design</h3>
+        <p>Consistent visual identities, considered layouts, and clear digital experiences across web, mobile, and campaign assets.</p>
+        <div class="service-tags"><span>UI/UX</span><span>Graphic design</span><span>Responsive design</span></div>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-number">04 / CUSTOM SOFTWARE</span>
+        <h3>Frontend &amp; backend engineering</h3>
+        <p>Custom applications, practical integrations, and API-connected features designed around the way your team works.</p>
+        <div class="service-tags"><span>Frontend</span><span>Backend</span><span>REST APIs</span><span>Databases</span></div>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-number">05 / DIGITAL COMMERCE</span>
+        <h3>E-commerce &amp; marketplaces</h3>
+        <p>Product-led shopping experiences, catalogue websites, and marketplace-style listings built to help people find what they need.</p>
+        <div class="service-tags"><span>Online stores</span><span>Product catalogues</span><span>Listings</span></div>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-number">06 / FROM IDEA TO LAUNCH</span>
+        <h3>Websites, and more</h3>
+        <p>From a focused landing page to a growing digital platform, we bring strategy, design, and development together.</p>
+        <div class="service-tags"><span>Business sites</span><span>Landing pages</span><span>Ongoing support</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
-    <div class="section-tag reveal">What I Know</div>
-    <h2 class="section-title reveal">Technical <span>Skills</span></h2>
+    <div class="section-tag reveal">Tools change. Craft stays.</div>
+    <h2 class="section-title reveal">A practical <span>tech stack.</span></h2>
     <div class="skills-grid">
 
       <div class="skill-card reveal" data-delay="0">
@@ -807,11 +958,241 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
-    <div class="section-tag reveal">My Work</div>
-    <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+    <div class="projects-heading reveal">
+      <div>
+        <div class="section-tag">Selected work</div>
+        <h2 class="section-title">Good work speaks <span>for itself.</span></h2>
+      </div>
+      <p class="projects-intro">A selection of digital experiences, online stores, and custom builds—made to look considered and work beautifully.</p>
+    </div>
+    <div class="project-filters" role="group" aria-label="Filter projects by platform">
+      <button class="project-filter" type="button" data-filter="all" aria-pressed="true">All projects</button>
+      <button class="project-filter" type="button" data-filter="wordpress" aria-pressed="false">WordPress</button>
+      <button class="project-filter" type="button" data-filter="custom" aria-pressed="false">Custom builds</button>
+    </div>
+    <p class="project-status" id="projectStatus" aria-live="polite"></p>
     <div class="projects-grid">
-      <div class="project-card reveal">
+      <div class="project-card reveal" data-category="wordpress">
         <div class="project-media project-media--blue">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fub.edu.ly%2Fen%2F?w=900&amp;h=570" alt="University of Benghazi website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress</span>
+          <div class="project-visual">University of Benghazi</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">University of Benghazi</div>
+          <div class="project-desc">A university website experience presenting academic information, campus resources, and essential updates for students and faculty.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Education</span><span class="tech-tag">University</span></div>
+          <div class="project-links"><a href="https://ub.edu.ly/en/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--cyan">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.tranzf.org%2F?w=900&amp;h=570" alt="Tranzf blog website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress</span>
+          <div class="project-visual">Tranzf</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Tranzf</div>
+          <div class="project-desc">A content-first blog website with an approachable reading experience, organized articles, and a clear editorial layout.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Blog</span><span class="tech-tag">Editorial</span></div>
+          <div class="project-links"><a href="https://www.tranzf.org/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--purple">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fodinstyl.com%2F?w=900&amp;h=570" alt="Odin Styl online store screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · E-commerce</span>
+          <div class="project-visual">Odin Styl</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Odin Styl</div>
+          <div class="project-desc">An e-commerce storefront designed to bring a distinctive product range into a polished, easy-to-browse online shop.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">E-commerce</span><span class="tech-tag">Online store</span></div>
+          <div class="project-links"><a href="https://odinstyl.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--green">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fherbalharmonyhaus.shop%2F?w=900&amp;h=570" alt="Herbal Harmony Haus online store screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · E-commerce</span>
+          <div class="project-visual">Herbal Harmony Haus</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Herbal Harmony Haus</div>
+          <div class="project-desc">An online shop with a calm, product-led storefront for browsing a curated collection of herbal and wellness goods.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">E-commerce</span><span class="tech-tag">Wellness</span></div>
+          <div class="project-links"><a href="https://herbalharmonyhaus.shop/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--orange">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Foxhall.com%2F?w=900&amp;h=570" alt="Oxhall e-commerce website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · E-commerce</span>
+          <div class="project-visual">Oxhall</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Oxhall</div>
+          <div class="project-desc">A refined e-commerce website with a clean product discovery journey and a straightforward shopping experience.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">E-commerce</span><span class="tech-tag">Storefront</span></div>
+          <div class="project-links"><a href="https://oxhall.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--red">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.glammaster.co.uk%2F?w=900&amp;h=570" alt="Glam Master services website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Services</span>
+          <div class="project-visual">Glam Master</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Glam Master</div>
+          <div class="project-desc">A services-focused business website presenting its offering through polished visual storytelling and clear calls to action.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Services</span><span class="tech-tag">Business site</span></div>
+          <div class="project-links"><a href="https://www.glammaster.co.uk/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--blue">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frezaitsolutions.com%2F?w=900&amp;h=570" alt="Reza IT Solutions website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Services</span>
+          <div class="project-visual">Reza IT Solutions</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Reza IT Solutions</div>
+          <div class="project-desc">A professional IT services website that introduces the company, explains its solutions, and makes it easy to get in touch.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">IT services</span><span class="tech-tag">Business site</span></div>
+          <div class="project-links"><a href="https://rezaitsolutions.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--cyan">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Friteawaybinhire.com.au%2F?w=900&amp;h=570" alt="Rite Away Bin Hire website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Services</span>
+          <div class="project-visual">Rite Away Bin Hire</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Rite Away Bin Hire</div>
+          <div class="project-desc">A service website for a bin hire business, built to make service information and booking enquiries easy to find.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Local services</span><span class="tech-tag">Lead generation</span></div>
+          <div class="project-links"><a href="https://riteawaybinhire.com.au/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--green">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.sshtravel.com%2F?w=900&amp;h=570" alt="SSH Travel website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Travel</span>
+          <div class="project-visual">SSH Travel</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">SSH Travel</div>
+          <div class="project-desc">A travel and tours website showcasing trip inspiration and helping visitors explore travel services and destinations.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Travel</span><span class="tech-tag">Tours</span></div>
+          <div class="project-links"><a href="https://www.sshtravel.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--orange">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.denvershoppers.com%2F?w=900&amp;h=570" alt="Denver Shoppers clothing store screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · E-commerce</span>
+          <div class="project-visual">Denver Shoppers</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Denver Shoppers</div>
+          <div class="project-desc">A clothing e-commerce website with a fashion-focused product catalogue and a streamlined online shopping journey.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Fashion</span><span class="tech-tag">E-commerce</span></div>
+          <div class="project-links"><a href="https://www.denvershoppers.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--purple">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmylittlerentals.com%2F?w=900&amp;h=570" alt="My Little Rentals rental listings website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Listings</span>
+          <div class="project-visual">My Little Rentals</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">My Little Rentals</div>
+          <div class="project-desc">A rental listings marketplace-style website that helps visitors discover properties and browse available rentals.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Listings</span><span class="tech-tag">Marketplace</span></div>
+          <div class="project-links"><a href="https://mylittlerentals.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--blue">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgoodforwellness.com%2F?w=900&amp;h=570" alt="Good For Wellness website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress</span>
+          <div class="project-visual">GW</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Good For Wellness</div>
+          <div class="project-desc">
+            A wellness-focused WordPress website with a clean, trustworthy brand feel and easy-to-navigate content structure for health audiences.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">WordPress</span>
+            <span class="tech-tag">Wellness</span>
+            <span class="tech-tag">Branding</span>
+            <span class="tech-tag">CMS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://goodforwellness.com/" class="project-link live" target="_blank" rel="noreferrer">View Live</a>
+            <a href="https://goodforwellness.com/" class="project-link" target="_blank" rel="noreferrer">Open Site</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="custom">
+        <div class="project-media project-media--blue">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffan-hub-plus.vercel.app%2F?w=900&amp;h=570" alt="Fan Hub Plus website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">Custom build</span>
+          <div class="project-visual">Fan Hub Plus</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Fan Hub Plus</div>
+          <div class="project-desc">A custom web experience with a dedicated fan-focused interface and a polished, responsive layout.</div>
+          <div class="project-tech"><span class="tech-tag">Custom build</span><span class="tech-tag">Web app</span><span class="tech-tag">Responsive</span></div>
+          <div class="project-links"><a href="https://fan-hub-plus.vercel.app/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="custom">
+        <div class="project-media project-media--orange">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fconstruction-np55.vercel.app%2F?w=900&amp;h=570" alt="Construction website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">Custom build</span>
+          <div class="project-visual">Construction</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Construction</div>
+          <div class="project-desc">A construction-focused business website presenting project work and services in a clear, professional format.</div>
+          <div class="project-tech"><span class="tech-tag">Custom build</span><span class="tech-tag">Business site</span><span class="tech-tag">Responsive</span></div>
+          <div class="project-links"><a href="https://construction-np55.vercel.app/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="custom">
+        <div class="project-media project-media--cyan">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffrontend-nine-indol-48.vercel.app%2F?w=900&amp;h=570" alt="Frontend Nine website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">Custom build</span>
+          <div class="project-visual">Frontend Nine</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Frontend Nine</div>
+          <div class="project-desc">A custom frontend web project with responsive page layouts and a modern interactive user experience.</div>
+          <div class="project-tech"><span class="tech-tag">Frontend</span><span class="tech-tag">Custom build</span><span class="tech-tag">Responsive</span></div>
+          <div class="project-links"><a href="https://frontend-nine-indol-48.vercel.app/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="custom">
+        <div class="project-media project-media--red">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fburgershopy.netlify.app%2F?w=900&amp;h=570" alt="Burger Shopy website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">Custom build · Food</span>
+          <div class="project-visual">Burger Shopy</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Burger Shopy</div>
+          <div class="project-desc">A bold restaurant website showcasing a burger menu and inviting customers to explore the food offering.</div>
+          <div class="project-tech"><span class="tech-tag">Custom build</span><span class="tech-tag">Restaurant</span><span class="tech-tag">Responsive</span></div>
+          <div class="project-links"><a href="https://burgershopy.netlify.app/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="custom">
+        <div class="project-media project-media--blue">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Faiprompthub.tech%2F?w=900&amp;h=570" alt="AIPromptHub website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">AI</div>
         </div>
@@ -833,8 +1214,9 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="200">
+      <div class="project-card reveal" data-delay="200" data-category="custom">
         <div class="project-media project-media--cyan">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftech-olympic-2026.netlify.app%2F?w=900&amp;h=570" alt="Tech Olympic 2026 website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">TO</div>
         </div>
@@ -856,8 +1238,9 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="400">
+      <div class="project-card reveal" data-delay="400" data-category="custom">
         <div class="project-media project-media--purple">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frajput-sports.netlify.app%2F?w=900&amp;h=570" alt="Rajput Sports website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">RS</div>
         </div>
@@ -879,8 +1262,9 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="600">
+      <div class="project-card reveal" data-delay="600" data-category="custom">
         <div class="project-media project-media--green">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fbeauty-of-beaches-created-by-raza.netlify.app%2F?w=900&amp;h=570" alt="Beauty of Beaches website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">BB</div>
         </div>
@@ -902,8 +1286,9 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="800">
+      <div class="project-card reveal" data-delay="800" data-category="custom">
         <div class="project-media project-media--orange">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fcinevaulthub.wuaze.com%2F?w=900&amp;h=570" alt="CineVault Hub website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">AS</div>
         </div>
@@ -925,8 +1310,9 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="1000">
+      <div class="project-card reveal" data-delay="1000" data-category="custom">
         <div class="project-media project-media--red">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffreeainew-m275.vercel.app%2F?w=900&amp;h=570" alt="Free AI New website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">FA</div>
         </div>
@@ -948,31 +1334,9 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-delay="1200">
-        <div class="project-media project-media--blue">
-          <span class="project-badge">WordPress</span>
-          <div class="project-visual">GW</div>
-        </div>
-        <div class="project-content">
-          <div class="project-title">Good For Wellness</div>
-          <div class="project-desc">
-            A wellness-focused WordPress website with a clean, trustworthy brand feel and easy-to-navigate content structure for health audiences.
-          </div>
-          <div class="project-tech">
-            <span class="tech-tag">WordPress</span>
-            <span class="tech-tag">Wellness</span>
-            <span class="tech-tag">Branding</span>
-            <span class="tech-tag">CMS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://goodforwellness.com/" class="project-link live" target="_blank" rel="noreferrer">View Live</a>
-            <a href="https://goodforwellness.com/" class="project-link" target="_blank" rel="noreferrer">Open Site</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card reveal" data-delay="1400">
+      <div class="project-card reveal" data-delay="1400" data-category="custom">
         <div class="project-media project-media--orange">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgracious-garments-123.netlify.app%2F?w=900&amp;h=570" alt="Gracious Garments website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">GG</div>
         </div>
@@ -996,8 +1360,9 @@
 
      
 
-      <div class="project-card reveal" data-delay="1800">
+      <div class="project-card reveal" data-delay="1800" data-category="custom">
         <div class="project-media project-media--purple">
+          <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Faurelia-atelia.vercel.app%2F?w=900&amp;h=570" alt="Aurelia Atelier website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Live</span>
           <div class="project-visual">AA</div>
         </div>
@@ -1018,6 +1383,20 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-tag reveal">A clear process</div>
+    <h2 class="section-title reveal">Clear steps.<br><span>Good momentum.</span></h2>
+    <div class="process-grid">
+      <article class="process-step reveal"><span>01 / DISCOVERY</span><h3>Start with the right questions</h3><p>We learn about your goals, audience, and requirements before settling on the right solution.</p></article>
+      <article class="process-step reveal"><span>02 / STRATEGY &amp; DESIGN</span><h3>Make a thoughtful plan</h3><p>We shape the structure, design direction, and feature plan around the people using the product.</p></article>
+      <article class="process-step reveal"><span>03 / ENGINEERING</span><h3>Build with care</h3><p>We develop responsive pages and useful features, sharing progress so the work stays aligned.</p></article>
+      <article class="process-step reveal"><span>04 / TEST &amp; LAUNCH</span><h3>Get it ready for the world</h3><p>We check the experience across devices, refine the details, and prepare for a confident launch.</p></article>
     </div>
   </div>
 </section>
@@ -1048,11 +1427,40 @@
   </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner contact-grid">
+    <div class="reveal-left">
+      <div class="section-tag">Have a good one in mind?</div>
+      <h2 class="section-title">Make it <span>happen.</span></h2>
+      <p class="contact-copy">Tell us a little about what you’re building. We’ll be glad to talk through the next step.<br><br>Call or WhatsApp: <a href="tel:+923172807217">+92 317 2807217</a><br>Prefer email? <a href="mailto:contact.aevora00@gmail.com">contact.aevora00@gmail.com</a></p>
+    </div>
+    <form class="inquiry-form reveal-right" id="projectForm">
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Your email<input name="email" type="email" autocomplete="email" required></label>
+      <label>What do you need?
+        <select name="service" required>
+          <option value="">Choose a service</option>
+          <option>WordPress / Shopify / e-commerce</option>
+          <option>Custom web app / full-stack development</option>
+          <option>Frontend / backend development</option>
+          <option>UI/UX / graphic design</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Tell us about your project<textarea name="message" required></textarea></label>
+      <button type="submit">Prepare project enquiry ↗</button>
+      <p class="form-note">This opens your email app with your project details ready to send.</p>
+    </form>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
+    <img class="footer-logo" src="assets/images/ae.jpeg" alt="Aevora Studio logo">
     <div class="footer-name">Aevora Studio</div>
-    <div class="footer-tagline">Full Stack & MERN Development · Karachi, Pakistan</div>
+    <div class="footer-tagline">Thoughtful digital experiences · Karachi, Pakistan</div>
     <div class="social-links">
       <a class="social-link" href="#about" title="About Aevora Studio">in</a>
       <a class="social-link" href="#projects" title="Aevora Studio projects">
@@ -1061,9 +1469,13 @@
       <a class="social-link" href="#projects" title="Aevora Studio projects">f</a>
       <a class="social-link" href="#experience" title="Aevora Studio experience" style="font-size:0.7rem;font-weight:700;">Work</a>
     </div>
-    <div class="footer-copy">© 2025 Aevora Studio · Crafted with 💙 in Karachi</div>
+    <div class="footer-copy">© 2026 Aevora Studio · Crafted with care in Karachi</div>
   </div>
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/923172807217" target="_blank" rel="noopener noreferrer" aria-label="Chat with Aevora Studio on WhatsApp at +92 317 2807217" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3a12.76 12.76 0 0 0-10.9 19.4L3.5 29l6.78-1.77A12.76 12.76 0 1 0 16.02 3Zm0 23.2a10.4 10.4 0 0 1-5.3-1.45l-.38-.23-4.02 1.05 1.07-3.92-.25-.4a10.4 10.4 0 1 1 8.88 4.95Zm5.7-7.8c-.31-.16-1.83-.9-2.12-1-.28-.1-.49-.16-.7.16-.21.31-.8 1-1 1.2-.18.21-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.54.16-.19.21-.32.31-.52.1-.21.05-.39-.03-.54-.08-.16-.7-1.68-.96-2.3-.25-.59-.5-.51-.7-.52l-.6-.01c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.56s1.1 2.97 1.26 3.18c.15.2 2.16 3.3 5.24 4.63.73.32 1.3.51 1.74.65.73.23 1.4.2 1.93.12.59-.09 1.83-.75 2.09-1.48.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
+</a>
 
 <script>
   // CURSOR
@@ -1080,8 +1492,61 @@
 
   // SCROLL BAR
   window.addEventListener('scroll', () => {
-    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = maxScroll > 0 ? window.scrollY / maxScroll : 0;
     document.getElementById('scrollBar').style.transform = `scaleX(${pct})`;
+  });
+
+  // PROJECT FILTERS
+  const projectFilters = document.querySelectorAll('.project-filter');
+  const projectCards = document.querySelectorAll('.project-card');
+  const projectStatus = document.getElementById('projectStatus');
+  function filterProjects(category) {
+    let visibleCount = 0;
+    projectCards.forEach(card => {
+      const isVisible = category === 'all' || card.dataset.category === category;
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount++;
+    });
+    const categoryName = category === 'wordpress' ? 'WordPress' : 'custom';
+    projectStatus.textContent = category === 'all'
+      ? `${visibleCount} projects in total`
+      : `${visibleCount} ${categoryName} projects`;
+    projectFilters.forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.filter === category));
+    });
+  }
+  projectFilters.forEach(button => {
+    button.addEventListener('click', () => filterProjects(button.dataset.filter));
+  });
+  filterProjects('all');
+
+  // SUBTLE PROJECT TILT
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    projectCards.forEach(card => {
+      card.addEventListener('pointermove', event => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        card.style.transform = `perspective(1100px) rotateX(${-y * 3}deg) rotateY(${x * 3}deg) translateY(-4px)`;
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // PROJECT ENQUIRY
+  const projectForm = document.getElementById('projectForm');
+  projectForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const details = new FormData(projectForm);
+    const subject = encodeURIComponent(`Project enquiry: ${details.get('service')}`);
+    const body = encodeURIComponent(
+      `Name: ${details.get('name')}\nEmail: ${details.get('email')}\nService: ${details.get('service')}\n\nProject details:\n${details.get('message')}`
+    );
+    window.location.href = `mailto:contact.aevora00@gmail.com?subject=${subject}&body=${body}`;
   });
 
   // SCROLL REVEAL
