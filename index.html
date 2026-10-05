@@ -365,7 +365,7 @@
   }
   .projects-heading .section-title { margin-bottom: 0; }
   .projects-intro { max-width: 360px; color: var(--muted); line-height: 1.7; font-size: 0.92rem; }
-  .project-filters { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 2rem 0; }
+  .project-filters { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 2rem 0 1.1rem; }
   .project-filter {
     padding: 0.55rem 1rem; border: 1px solid var(--border); border-radius: 999px;
     color: var(--muted); background: transparent; font: inherit; font-size: 0.8rem;
@@ -374,16 +374,32 @@
   .project-filter:hover, .project-filter[aria-pressed="true"] {
     color: var(--bg); background: var(--blue); border-color: var(--blue);
   }
-  .project-status { margin: 0 0 1rem; color: var(--muted); font-size: 0.78rem; }
+  .project-status { margin: 0 0 2rem; color: var(--muted); font-size: 0.78rem; }
+  .project-group { margin-top: 2.6rem; }
+  .project-group[hidden] { display: none; }
+  .project-group-heading {
+    display: flex; align-items: end; justify-content: space-between; gap: 1rem;
+    margin-bottom: 1.1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+  }
+  .project-group-title {
+    font-family: var(--font-head); font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    letter-spacing: -0.7px; color: var(--white);
+  }
+  .project-group-title span { color: var(--blue); }
+  .project-group-copy { margin-top: 0.35rem; color: var(--muted); font-size: 0.84rem; }
+  .project-group-count {
+    flex: 0 0 auto; padding: 0.35rem 0.7rem; border: 1px solid var(--border);
+    border-radius: 999px; color: var(--cyan); font-size: 0.72rem; letter-spacing: 0.04em;
+  }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
   }
   .project-card {
-    background: var(--bg);
+    background: linear-gradient(160deg, rgba(29,36,28,0.8), var(--bg) 45%);
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.2s ease;
     transform-style: preserve-3d;
@@ -394,7 +410,7 @@
   .project-card:hover {
     transform: translateY(-5px);
     border-color: rgba(194, 243, 107, 0.42);
-    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.3), 0 0 28px rgba(194,243,107,0.07);
   }
   .project-media {
     position: relative;
@@ -463,7 +479,7 @@
     text-shadow: 0 10px 30px rgba(0,0,0,0.25);
   }
   .project-content {
-    padding: 1rem 0.15rem 1.15rem;
+    padding: 1.1rem 1.05rem 1.2rem;
   }
   .project-title {
     font-family: var(--font-head);
@@ -477,7 +493,7 @@
     font-size: 0.9rem;
     line-height: 1.7;
     margin-bottom: 1rem;
-    min-height: 68px;
+    min-height: 76px;
   }
   .project-tech {
     display: flex;
@@ -632,7 +648,8 @@
     nav ul { display: flex; gap: 0.8rem; }
     nav ul a { font-size: 0.68rem; }
     nav .nav-btn { padding: 0.5rem 0.7rem; font-size: 0.72rem; }
-    .projects-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project-group-heading { align-items: flex-start; flex-direction: column; }
     .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -644,9 +661,10 @@
   @media(max-width: 480px) {
     section { padding: 4.5rem 1.15rem; }
     .hero-title { letter-spacing: -2px; }
-    .service-grid, .process-grid { grid-template-columns: 1fr; }
+    .service-grid, .process-grid, .projects-grid { grid-template-columns: 1fr; }
     .inquiry-form { grid-template-columns: 1fr; padding: 1rem; }
     .inquiry-form label, .inquiry-form label:nth-child(3), .inquiry-form label:nth-child(4), .inquiry-form button, .form-note { grid-column: 1; }
+    .project-group-heading { align-items: flex-start; }
   }
   @media(prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -951,6 +969,20 @@
         <div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div>
       </div>
 
+      <div class="skill-card reveal" data-delay="1180">
+        <div class="skill-icon">📱</div>
+        <div class="skill-name">App Development</div>
+        <div class="skill-desc">Designing and building user-friendly, responsive mobile applications</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="70"></div></div>
+      </div>
+
+      <div class="skill-card reveal" data-delay="1240">
+        <div class="skill-icon">📣</div>
+        <div class="skill-name">Google Ads</div>
+        <div class="skill-desc">Search campaign setup, keyword targeting, and ad performance optimization</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="68"></div></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -961,17 +993,26 @@
     <div class="projects-heading reveal">
       <div>
         <div class="section-tag">Selected work</div>
-        <h2 class="section-title">Good work speaks <span>for itself.</span></h2>
+        <h2 class="section-title">Built on the right <span>platform.</span></h2>
       </div>
-      <p class="projects-intro">A selection of digital experiences, online stores, and custom builds—made to look considered and work beautifully.</p>
+      <p class="projects-intro">Explore the work by platform: WordPress websites, Shopify stores, and custom-coded digital experiences.</p>
     </div>
     <div class="project-filters" role="group" aria-label="Filter projects by platform">
       <button class="project-filter" type="button" data-filter="all" aria-pressed="true">All projects</button>
       <button class="project-filter" type="button" data-filter="wordpress" aria-pressed="false">WordPress</button>
-      <button class="project-filter" type="button" data-filter="custom" aria-pressed="false">Custom builds</button>
+      <button class="project-filter" type="button" data-filter="shopify" aria-pressed="false">Shopify</button>
+      <button class="project-filter" type="button" data-filter="custom" aria-pressed="false">Custom code</button>
     </div>
     <p class="project-status" id="projectStatus" aria-live="polite"></p>
-    <div class="projects-grid">
+    <div class="project-group" data-group="wordpress" aria-labelledby="wordpress-projects-title">
+      <div class="project-group-heading">
+        <div>
+          <h3 class="project-group-title" id="wordpress-projects-title">Word<span>Press</span></h3>
+          <p class="project-group-copy">CMS-powered websites, stores, and business platforms.</p>
+        </div>
+        <span class="project-group-count" data-group-count="wordpress"></span>
+      </div>
+      <div class="projects-grid">
       <div class="project-card reveal" data-category="wordpress">
         <div class="project-media project-media--blue">
           <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fub.edu.ly%2Fen%2F?w=900&amp;h=570" alt="University of Benghazi website screenshot" loading="lazy" decoding="async">
@@ -1138,6 +1179,67 @@
           </div>
         </div>
       </div>
+      </div>
+    </div>
+    <div class="project-group" data-group="shopify" aria-labelledby="shopify-projects-title">
+      <div class="project-group-heading">
+        <div>
+          <h3 class="project-group-title" id="shopify-projects-title">Shop<span>ify</span></h3>
+          <p class="project-group-copy">Branded online stores built on Shopify.</p>
+        </div>
+        <span class="project-group-count" data-group-count="shopify"></span>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal" data-category="shopify">
+          <div class="project-media project-media--cyan">
+            <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftravelwithasma.com%2F?w=900&amp;h=570" alt="Travel with Asma Shopify store preview" loading="lazy" decoding="async">
+            <span class="project-badge">Shopify · Travel</span>
+            <div class="project-visual">Travel with Asma</div>
+          </div>
+          <div class="project-content">
+            <div class="project-title">Travel with Asma</div>
+            <div class="project-desc">A branded Shopify storefront for Travel with Asma, presented with a clear, responsive shopping experience.</div>
+            <div class="project-tech"><span class="tech-tag">Shopify</span><span class="tech-tag">E-commerce</span><span class="tech-tag">Travel</span></div>
+            <div class="project-links"><a href="https://travelwithasma.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="shopify">
+          <div class="project-media project-media--purple">
+            <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmavrro.store%2F?w=900&amp;h=570" alt="Mavrro Shopify store preview" loading="lazy" decoding="async">
+            <span class="project-badge">Shopify · Store</span>
+            <div class="project-visual">Mavrro</div>
+          </div>
+          <div class="project-content">
+            <div class="project-title">Mavrro</div>
+            <div class="project-desc">A Shopify online store for Mavrro, organized around a polished brand presentation and easy product discovery.</div>
+            <div class="project-tech"><span class="tech-tag">Shopify</span><span class="tech-tag">E-commerce</span><span class="tech-tag">Storefront</span></div>
+            <div class="project-links"><a href="https://mavrro.store/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="shopify">
+          <div class="project-media project-media--orange">
+            <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fyanno.store%2F?w=900&amp;h=570" alt="Yanno Shopify store preview" loading="lazy" decoding="async">
+            <span class="project-badge">Shopify · Store</span>
+            <div class="project-visual">Yanno</div>
+          </div>
+          <div class="project-content">
+            <div class="project-title">Yanno</div>
+            <div class="project-desc">A Shopify storefront for Yanno, featuring a focused online shopping journey across desktop and mobile.</div>
+            <div class="project-tech"><span class="tech-tag">Shopify</span><span class="tech-tag">E-commerce</span><span class="tech-tag">Responsive</span></div>
+            <div class="project-links"><a href="https://yanno.store/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project-group" data-group="custom" aria-labelledby="custom-projects-title">
+      <div class="project-group-heading">
+        <div>
+          <h3 class="project-group-title" id="custom-projects-title">Custom <span>code</span></h3>
+          <p class="project-group-copy">Purpose-built websites and digital products, coded from the ground up.</p>
+        </div>
+        <span class="project-group-count" data-group-count="custom"></span>
+      </div>
+      <div class="projects-grid">
       <div class="project-card reveal" data-category="custom">
         <div class="project-media project-media--blue">
           <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffan-hub-plus.vercel.app%2F?w=900&amp;h=570" alt="Fan Hub Plus website screenshot" loading="lazy" decoding="async">
@@ -1384,6 +1486,7 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
@@ -1500,7 +1603,13 @@
   // PROJECT FILTERS
   const projectFilters = document.querySelectorAll('.project-filter');
   const projectCards = document.querySelectorAll('.project-card');
+  const projectGroups = document.querySelectorAll('.project-group');
   const projectStatus = document.getElementById('projectStatus');
+  const projectCategoryNames = { wordpress: 'WordPress', shopify: 'Shopify', custom: 'custom code' };
+  projectGroups.forEach(group => {
+    const count = group.querySelectorAll('.project-card').length;
+    group.querySelector('[data-group-count]').textContent = `${count} project${count === 1 ? '' : 's'}`;
+  });
   function filterProjects(category) {
     let visibleCount = 0;
     projectCards.forEach(card => {
@@ -1508,10 +1617,12 @@
       card.hidden = !isVisible;
       if (isVisible) visibleCount++;
     });
-    const categoryName = category === 'wordpress' ? 'WordPress' : 'custom';
+    projectGroups.forEach(group => {
+      group.hidden = category !== 'all' && group.dataset.group !== category;
+    });
     projectStatus.textContent = category === 'all'
       ? `${visibleCount} projects in total`
-      : `${visibleCount} ${categoryName} projects`;
+      : `${visibleCount} ${projectCategoryNames[category]} projects`;
     projectFilters.forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.filter === category));
     });
