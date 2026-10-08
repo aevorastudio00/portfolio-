@@ -8,6 +8,9 @@
 <title>Aevora Studio — Digital Experiences, Built to Grow</title>
 <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/images/favicon.png">
+<link rel="preconnect" href="https://s.wordpress.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -193,7 +196,7 @@
   }
   .profile-ring {
     position: relative;
-    width: min(460px, 42vw); aspect-ratio: 1;
+    width: min(460px, 100%); aspect-ratio: 1;
     padding: 10px;
     background: linear-gradient(145deg, rgba(194,243,107,0.12), rgba(255,255,255,0.03));
     border: 1px solid rgba(194,243,107,0.22);
@@ -383,6 +386,13 @@
     flex: 0 0 auto; padding: 0.35rem 0.7rem; border: 1px solid var(--border);
     border-radius: 999px; color: var(--cyan); font-size: 0.72rem; letter-spacing: 0.04em;
   }
+  .project-group-actions { display: flex; align-items: center; gap: 0.8rem; }
+  .project-see-all {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: var(--blue); font-size: 0.78rem; font-weight: 700;
+    text-decoration: none; transition: color 0.2s, transform 0.2s;
+  }
+  .project-see-all:hover { color: var(--cyan); transform: translateX(3px); }
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -504,14 +514,17 @@
   }
   .project-links {
     display: flex;
-    gap: 0.8rem;
+    align-items: center;
+    gap: 0.65rem;
     flex-wrap: wrap;
   }
   .project-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.7rem 1.1rem;
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0.65rem 1rem;
     border-radius: 10px;
     text-decoration: none;
     font-size: 0.82rem;
@@ -632,7 +645,9 @@
 
   /* RESPONSIVE */
   @media(max-width: 768px) {
-    .hero-grid, .about-grid { grid-template-columns: 1fr; }
+    .hero-grid, .about-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero-grid { width: 100%; }
+    .hero-content, .hero-visual { min-width: 0; }
     .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .hero-visual { display: flex; margin-top: 2rem; }
     .reveal-left, .reveal-right { transform: translateY(24px); transition: opacity 0.7s ease, transform 0s; }
@@ -646,7 +661,9 @@
     .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .profile-ring { width: min(460px, 88vw); height: auto; }
+    .profile-ring { width: min(460px, 100%); height: auto; }
+    .float-card.c1 { right: -12px; }
+    .float-card.c2 { left: -12px; }
   }
   @media(max-width: 560px) {
     nav ul { display: none; }
@@ -874,7 +891,10 @@
           <h3 class="project-group-title" id="wordpress-projects-title">Word<span>Press</span></h3>
           <p class="project-group-copy">CMS-powered websites, stores, and business platforms.</p>
         </div>
-        <span class="project-group-count" data-group-count="wordpress"></span>
+        <div class="project-group-actions">
+          <span class="project-group-count" data-group-count="wordpress"></span>
+          <a class="project-see-all" href="projects.html?category=wordpress">See all projects ↗</a>
+        </div>
       </div>
       <div class="projects-grid">
       <div class="project-card reveal" data-category="wordpress">
@@ -1043,6 +1063,123 @@
           </div>
         </div>
       </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--green">
+          <img class="project-image" src="assets/images/projects/maariful-quran-academy.webp" alt="Maariful Quran Academy website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Education</span>
+          <div class="project-visual">Maariful Quran Academy</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Maariful Quran Academy</div>
+          <div class="project-desc">An educational website for a Quran academy, presenting its learning programs and information for students and families.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Education</span><span class="tech-tag">Academy</span></div>
+          <div class="project-links"><a href="https://maarifulquranacademy.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--blue">
+          <img class="project-image" src="assets/images/projects/dash-capital.webp" alt="Dash Capital business financing page screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Finance</span>
+          <div class="project-visual">Dash Capital</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Dash Capital — Business Financing</div>
+          <div class="project-desc">A financing landing page introducing funding options and guiding businesses toward a financing enquiry.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Finance</span><span class="tech-tag">Lead generation</span></div>
+          <div class="project-links"><a href="https://dashcapitalco.com/business-financing" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--purple">
+          <img class="project-image" src="assets/images/projects/digital-marketing-agency.webp" alt="The Digital Marketing Agency website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Marketing</span>
+          <div class="project-visual">Digital Marketing Agency</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">The Digital Marketing Agency</div>
+          <div class="project-desc">A marketing agency website presenting SEO, paid advertising, and web design services for businesses.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">SEO</span><span class="tech-tag">Digital marketing</span></div>
+          <div class="project-links"><a href="https://digitalmarketingagency-consultant.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--orange">
+          <img class="project-image" src="assets/images/projects/charlis-distribution.webp" alt="Charlis Distribution auto parts website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Automotive</span>
+          <div class="project-visual">Charlis Distribution</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Charlis Distribution</div>
+          <div class="project-desc">An automotive parts website showcasing replacement parts for a broad range of vehicle makes and models.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Automotive</span><span class="tech-tag">Parts catalogue</span></div>
+          <div class="project-links"><a href="https://charlis-distribution.co/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--cyan">
+          <img class="project-image" src="assets/images/projects/mindup.webp" alt="MindUp learning platform website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Learning</span>
+          <div class="project-visual">MindUp</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">MindUp</div>
+          <div class="project-desc">A learning experience platform introducing digital learning resources and an AI-powered approach to education.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">E-learning</span><span class="tech-tag">Education</span></div>
+          <div class="project-links"><a href="https://mindup.co.za/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--red">
+          <img class="project-image" src="assets/images/projects/nathans-detailing.webp" alt="Nathan's Detailing website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Auto care</span>
+          <div class="project-visual">Nathan's Detailing</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Nathan's Detailing</div>
+          <div class="project-desc">A detailing business website presenting automotive care services and giving customers a way to explore the business.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Auto detailing</span><span class="tech-tag">Services</span></div>
+          <div class="project-links"><a href="https://nathansdetailing.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--purple">
+          <img class="project-image" src="assets/images/projects/dli-education.webp" alt="DLI Education preview artwork" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Education</span>
+          <div class="project-visual">DLI Education</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">DLI Education</div>
+          <div class="project-desc">An education-focused website presenting learning information and resources for prospective students.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Education</span><span class="tech-tag">Learning</span></div>
+          <div class="project-links"><a href="https://dlieducation.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--orange">
+          <img class="project-image" src="assets/images/projects/hattrix.webp" alt="Hattrix online shop website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · WooCommerce</span>
+          <div class="project-visual">Hattrix</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">Hattrix</div>
+          <div class="project-desc">An online retail storefront for browsing products and shopping through a WooCommerce-powered store.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">WooCommerce</span><span class="tech-tag">E-commerce</span></div>
+          <div class="project-links"><a href="https://hattrix.shop/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="wordpress">
+        <div class="project-media project-media--green">
+          <img class="project-image" src="assets/images/projects/gulfskillpro.webp" alt="GulfSkillPro industrial training website screenshot" loading="lazy" decoding="async">
+          <span class="project-badge">WordPress · Training</span>
+          <div class="project-visual">GulfSkillPro</div>
+        </div>
+        <div class="project-content">
+          <div class="project-title">GulfSkillPro</div>
+          <div class="project-desc">An industrial safety and permit-to-work training website with straightforward learning information for Gulf-based workers.</div>
+          <div class="project-tech"><span class="tech-tag">WordPress</span><span class="tech-tag">Industrial safety</span><span class="tech-tag">Training</span></div>
+          <div class="project-links"><a href="https://gulfskillpro.com/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
+        </div>
+      </div>
       </div>
     </div>
     <div class="project-group" data-group="shopify" aria-labelledby="shopify-projects-title">
@@ -1051,7 +1188,10 @@
           <h3 class="project-group-title" id="shopify-projects-title">Shop<span>ify</span></h3>
           <p class="project-group-copy">Branded online stores built on Shopify.</p>
         </div>
-        <span class="project-group-count" data-group-count="shopify"></span>
+        <div class="project-group-actions">
+          <span class="project-group-count" data-group-count="shopify"></span>
+          <a class="project-see-all" href="projects.html?category=shopify">See all projects ↗</a>
+        </div>
       </div>
       <div class="projects-grid">
         <div class="project-card reveal" data-category="shopify">
@@ -1101,18 +1241,21 @@
           <h3 class="project-group-title" id="custom-projects-title">Custom <span>code</span></h3>
           <p class="project-group-copy">Purpose-built websites and digital products, coded from the ground up.</p>
         </div>
-        <span class="project-group-count" data-group-count="custom"></span>
+        <div class="project-group-actions">
+          <span class="project-group-count" data-group-count="custom"></span>
+          <a class="project-see-all" href="projects.html?category=custom">See all projects ↗</a>
+        </div>
       </div>
       <div class="projects-grid">
       <div class="project-card reveal" data-category="custom">
         <div class="project-media project-media--purple">
           <img class="project-image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fubaidportfolio.infinityfree.me%2F?w=900&amp;h=570" alt="Ubaid Portfolio website screenshot" loading="lazy" decoding="async">
           <span class="project-badge">Custom build</span>
-          <div class="project-visual">Ubaid Portfolio</div>
+          <div class="project-visual">MarketLink</div>
         </div>
         <div class="project-content">
-          <div class="project-title">Ubaid Portfolio</div>
-          <div class="project-desc">A personal portfolio website showcasing projects, skills, and professional experience in a clear, responsive layout.</div>
+          <div class="project-title">MarketLink</div>
+          <div class="project-desc">A Professional Shop Market website for all kinds of items.</div>
           <div class="project-tech"><span class="tech-tag">Portfolio</span><span class="tech-tag">Custom build</span><span class="tech-tag">Responsive</span></div>
           <div class="project-links"><a href="https://ubaidportfolio.infinityfree.me/" class="project-link live" target="_blank" rel="noopener noreferrer">View live project ↗</a></div>
         </div>
@@ -1460,14 +1603,22 @@
   const projectGroups = document.querySelectorAll('.project-group');
   const projectStatus = document.getElementById('projectStatus');
   const projectCategoryNames = { wordpress: 'WordPress', shopify: 'Shopify', custom: 'custom code' };
+  const projectCounts = {};
   projectGroups.forEach(group => {
-    const count = group.querySelectorAll('.project-card').length;
+    const groupCards = Array.from(group.querySelectorAll('.project-card'));
+    const count = groupCards.length;
+    const category = group.dataset.group;
+    projectCounts[category] = count;
     group.querySelector('[data-group-count]').textContent = `${count} project${count === 1 ? '' : 's'}`;
+    group.querySelectorAll('.project-card').forEach((card, index) => {
+      card.dataset.previewHidden = String(index >= 3);
+    });
   });
   function filterProjects(category) {
     let visibleCount = 0;
     projectCards.forEach(card => {
-      const isVisible = category === 'all' || card.dataset.category === category;
+      const matchesCategory = category === 'all' || card.dataset.category === category;
+      const isVisible = matchesCategory && card.dataset.previewHidden !== 'true';
       card.hidden = !isVisible;
       if (isVisible) visibleCount++;
     });
@@ -1475,8 +1626,8 @@
       group.hidden = category !== 'all' && group.dataset.group !== category;
     });
     projectStatus.textContent = category === 'all'
-      ? `${visibleCount} projects in total`
-      : `${visibleCount} ${projectCategoryNames[category]} projects`;
+      ? `Showing 3 projects in each category · ${Object.values(projectCounts).reduce((total, count) => total + count, 0)} projects in total`
+      : `Showing ${visibleCount} of ${projectCounts[category]} ${projectCategoryNames[category]} projects`;
     projectFilters.forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.filter === category));
     });

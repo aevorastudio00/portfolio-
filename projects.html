@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10130f">
+  <meta name="description" content="Explore WordPress, Shopify, and custom-coded projects by Aevora Studio.">
+  <title>Selected Projects — Aevora Studio</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://s.wordpress.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #10130f;
+      --surface: #171c16;
+      --card: #1d241c;
+      --lime: #c2f36b;
+      --white: #f4f5ef;
+      --muted: #a0a99a;
+      --border: rgba(194,243,107,0.16);
+      --font-head: 'Space Grotesk', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh; margin: 0; background: var(--bg); color: var(--white);
+      font-family: var(--font-body); overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .site-nav {
+      position: sticky; top: 0; z-index: 5; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem; padding: 1rem max(5vw, calc((100vw - 1280px) / 2));
+      border-bottom: 1px solid var(--border); background: rgba(16,19,15,0.88); backdrop-filter: blur(18px);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; font: 700 0.95rem var(--font-head); }
+    .brand img { width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 10px; object-fit: contain; }
+    .back-link { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .back-link:hover { color: var(--lime); }
+    main { width: min(1280px, calc(100% - 3rem)); margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 0; }
+    .eyebrow { display: flex; align-items: center; gap: 0.65rem; color: var(--lime); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+    .eyebrow::before { width: 26px; height: 1px; background: var(--lime); content: ""; }
+    h1 { max-width: 800px; margin: 1rem 0 0.9rem; font: 600 clamp(2.8rem, 7vw, 5.6rem)/1.02 var(--font-head); letter-spacing: -0.065em; }
+    h1 span { color: var(--lime); }
+    .intro { max-width: 600px; color: var(--muted); font-size: 1rem; line-height: 1.8; }
+    .filters { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 2.5rem 0 1.2rem; }
+    .filter {
+      padding: 0.65rem 1.05rem; border: 1px solid var(--border); border-radius: 999px;
+      background: transparent; color: var(--muted); font: 600 0.8rem var(--font-body); cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .filter:hover, .filter[aria-pressed="true"] { border-color: var(--lime); background: var(--lime); color: var(--bg); }
+    .status { min-height: 1.4rem; margin: 0 0 1.5rem; color: var(--muted); font-size: 0.8rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.35rem; }
+    .project-card {
+      position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 18px;
+      background: linear-gradient(155deg, rgba(29,36,28,0.8), var(--bg) 55%);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.2); cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover, .project-card:focus-visible {
+      transform: translateY(-6px); border-color: rgba(194,243,107,0.55);
+      box-shadow: 0 25px 55px rgba(0,0,0,0.34), 0 0 30px rgba(194,243,107,0.08); outline: none;
+    }
+    .project-card .project-media {
+      position: relative; display: flex; align-items: flex-end; justify-content: space-between;
+      aspect-ratio: 1.58 / 1; padding: 1.2rem; overflow: hidden; border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #202a19, #788b4e);
+    }
+    .project-card .project-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.65s ease; }
+    .project-card:hover .project-image { transform: scale(1.045); }
+    .project-card .project-media::after { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,12,8,0.04) 25%, rgba(8,12,8,0.76)); content: ""; }
+    .project-card .project-badge {
+      position: absolute; top: 1rem; left: 1rem; z-index: 1; padding: 0.42rem 0.72rem;
+      border: 1px solid rgba(255,255,255,0.13); border-radius: 999px; background: rgba(12,16,11,0.78);
+      color: var(--lime); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; backdrop-filter: blur(10px);
+    }
+    .project-card .project-visual { position: relative; z-index: 1; color: white; font: 700 clamp(1.25rem, 2vw, 1.8rem) var(--font-head); letter-spacing: -0.04em; }
+    .project-card .project-content { padding: 1.3rem 1.35rem 1.4rem; }
+    .project-card .project-title { margin-bottom: 0.55rem; color: var(--white); font: 700 1.15rem var(--font-head); }
+    .project-card .project-desc { min-height: 4.6rem; margin: 0 0 1rem; color: var(--muted); font-size: 0.86rem; line-height: 1.7; }
+    .project-card .project-tech { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.15rem; }
+    .project-card .tech-tag { padding: 0.32rem 0.65rem; border: 1px solid var(--border); border-radius: 999px; color: #d7e4ca; font-size: 0.68rem; }
+    .project-card .project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; }
+    .project-card .project-link {
+      display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center;
+      min-height: 42px; padding: 0.65rem 1rem; border: 1px solid transparent; border-radius: 9px;
+      background: var(--lime); color: var(--bg); font-size: 0.78rem; font-weight: 700; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .project-card .project-link:not(.live) { border-color: var(--border); background: rgba(255,255,255,0.025); color: var(--white); }
+    .project-card .project-link:hover { background: #e5ebdf; color: var(--bg); }
+    .project-card .project-link:not(.live):hover { border-color: var(--lime); background: rgba(194,243,107,0.1); color: var(--lime); }
+    .project-card[hidden] { display: none; }
+    .empty-state { grid-column: 1 / -1; padding: 3rem; border: 1px solid var(--border); border-radius: 14px; color: var(--muted); text-align: center; }
+    .detail-dialog {
+      position: fixed; width: min(1120px, calc(100% - 2rem)); max-width: none; max-height: min(90vh, 900px);
+      padding: 0; overflow: auto; border: 1px solid rgba(194,243,107,0.25); border-radius: 20px;
+      background: #141812; color: var(--white); box-shadow: 0 32px 100px rgba(0,0,0,0.7);
+    }
+    .detail-dialog::backdrop { background: rgba(4,6,4,0.84); backdrop-filter: blur(8px); }
+    .detail-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(270px, 0.8fr); min-height: 450px; }
+    .detail-image-wrap { display: grid; place-items: center; min-height: 420px; padding: 1.2rem; background: #090b08; }
+    .detail-image { display: block; width: 100%; max-height: 72vh; object-fit: contain; }
+    .detail-copy { position: relative; align-self: center; padding: 3.2rem 2rem; }
+    .detail-close {
+      position: absolute; top: 0.85rem; right: 0.85rem; z-index: 2; display: grid; place-items: center;
+      width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 50%;
+      background: var(--surface); color: var(--white); font-size: 1.3rem; cursor: pointer;
+    }
+    .detail-close:hover { border-color: var(--lime); color: var(--lime); }
+    .detail-category { color: var(--lime); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+    .detail-title { margin: 0.9rem 0; font: 700 clamp(1.8rem, 3vw, 2.6rem)/1.1 var(--font-head); letter-spacing: -0.05em; }
+    .detail-description { color: var(--muted); font-size: 0.92rem; line-height: 1.8; }
+    .detail-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.4rem 0 1.8rem; }
+    .detail-tags span { padding: 0.4rem 0.7rem; border: 1px solid var(--border); border-radius: 999px; color: #d7e4ca; font-size: 0.72rem; }
+    .detail-live {
+      display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.1rem;
+      border-radius: 9px; background: var(--lime); color: var(--bg); font-size: 0.82rem;
+      font-weight: 700; text-decoration: none;
+    }
+    .detail-live:hover { background: #e5ebdf; }
+    .detail-live[hidden] { display: none; }
+    footer { padding: 1.6rem 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.76rem; text-align: center; }
+    @media(max-width: 900px) {
+      .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .detail-layout { grid-template-columns: 1fr; }
+      .detail-image-wrap { min-height: 260px; }
+      .detail-image { max-height: 56vh; }
+      .detail-copy { padding: 1.5rem 1.7rem 2rem; }
+    }
+    @media(max-width: 560px) {
+      .site-nav { padding: 0.75rem 1rem; }
+      .brand { font-size: 0.8rem; }
+      .brand img { width: 32px; height: 32px; }
+      main { width: min(100% - 2rem, 440px); padding: 3.5rem 0; }
+      .project-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .project-card .project-desc { min-height: 0; }
+      .detail-dialog { width: calc(100% - 1rem); max-height: 94vh; border-radius: 14px; }
+      .detail-image-wrap { min-height: 210px; padding: 0.7rem; }
+      .detail-copy { padding: 1.25rem 1.2rem 1.6rem; }
+    }
+    @media(prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="index.html#hero"><img src="assets/images/ae.webp" alt=""><span>Aevora Studio</span></a>
+    <a class="back-link" href="index.html#projects">← Back to home</a>
+  </nav>
+  <main>
+    <div class="eyebrow">Selected work</div>
+    <h1>Projects made to<br><span>move things forward.</span></h1>
+    <p class="intro">A closer look at digital experiences built across WordPress, Shopify, and custom code. Select any project to explore its preview and details.</p>
+    <div class="filters" role="group" aria-label="Filter projects by platform">
+      <button class="filter" type="button" data-filter="all" aria-pressed="false">All projects</button>
+      <button class="filter" type="button" data-filter="wordpress" aria-pressed="false">WordPress</button>
+      <button class="filter" type="button" data-filter="shopify" aria-pressed="false">Shopify</button>
+      <button class="filter" type="button" data-filter="custom" aria-pressed="false">Custom code</button>
+    </div>
+    <p class="status" id="projectStatus" role="status" aria-live="polite">Loading projects…</p>
+    <div class="project-grid" id="projectGrid" aria-live="polite"></div>
+  </main>
+  <footer>© 2026 Aevora Studio · Crafted with care in Karachi</footer>
+
+  <dialog class="detail-dialog" id="projectDialog" aria-labelledby="detailTitle">
+    <button class="detail-close" id="detailClose" type="button" aria-label="Close project details">×</button>
+    <div class="detail-layout">
+      <div class="detail-image-wrap"><img class="detail-image" id="detailImage" alt=""></div>
+      <div class="detail-copy">
+        <div class="detail-category" id="detailCategory"></div>
+        <h2 class="detail-title" id="detailTitle"></h2>
+        <p class="detail-description" id="detailDescription"></p>
+        <div class="detail-tags" id="detailTags"></div>
+        <a class="detail-live" id="detailLive" href="#" target="_blank" rel="noopener noreferrer">Visit live project ↗</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const categories = {
+      wordpress: 'WordPress',
+      shopify: 'Shopify',
+      custom: 'Custom code'
+    };
+    const grid = document.getElementById('projectGrid');
+    const status = document.getElementById('projectStatus');
+    const filters = Array.from(document.querySelectorAll('.filter'));
+    const dialog = document.getElementById('projectDialog');
+    const detailImage = document.getElementById('detailImage');
+    const detailCategory = document.getElementById('detailCategory');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailDescription = document.getElementById('detailDescription');
+    const detailTags = document.getElementById('detailTags');
+    const detailLive = document.getElementById('detailLive');
+    let activeCategory = new URLSearchParams(window.location.search).get('category') || 'all';
+    let lastFocusedCard = null;
+
+    if (!['all', ...Object.keys(categories)].includes(activeCategory)) activeCategory = 'all';
+
+    function filterProjects(category, updateAddress = true) {
+      activeCategory = category;
+      let shown = 0;
+      let total = 0;
+      grid.querySelectorAll('.project-card').forEach(card => {
+        total++;
+        const visible = category === 'all' || card.dataset.category === category;
+        card.hidden = !visible;
+        if (visible) shown++;
+      });
+      filters.forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.filter === category));
+      });
+      const label = category === 'all' ? 'projects' : `${categories[category]} projects`;
+      status.textContent = `Showing ${shown} of ${total} ${label}. Select a card to view its details.`;
+      if (updateAddress) {
+        const url = new URL(window.location.href);
+        if (category === 'all') url.searchParams.delete('category');
+        else url.searchParams.set('category', category);
+        window.history.replaceState({}, '', url);
+      }
+    }
+
+    function openProject(card) {
+      const image = card.querySelector('.project-image');
+      const title = card.querySelector('.project-title');
+      const description = card.querySelector('.project-desc');
+      const badge = card.querySelector('.project-badge');
+      const liveLink = card.querySelector('.project-link');
+      lastFocusedCard = card;
+      detailImage.src = image.src;
+      detailImage.alt = image.alt || `${title.textContent.trim()} project preview`;
+      detailCategory.textContent = badge ? badge.textContent.trim() : categories[card.dataset.category];
+      detailTitle.textContent = title.textContent.trim();
+      detailDescription.textContent = description.textContent.trim();
+      detailTags.replaceChildren();
+      card.querySelectorAll('.tech-tag').forEach(tag => {
+        const item = document.createElement('span');
+        item.textContent = tag.textContent.trim();
+        detailTags.append(item);
+      });
+      if (liveLink) {
+        detailLive.href = liveLink.href;
+        detailLive.hidden = false;
+      } else {
+        detailLive.hidden = true;
+      }
+      dialog.showModal();
+    }
+
+    filters.forEach(button => button.addEventListener('click', () => filterProjects(button.dataset.filter)));
+    grid.addEventListener('click', event => {
+      if (event.target.closest('.project-link')) return;
+      const card = event.target.closest('.project-card');
+      if (card) openProject(card);
+    });
+    grid.addEventListener('keydown', event => {
+      if (event.target.classList.contains('project-card') && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        openProject(event.target);
+      }
+    });
+    document.getElementById('detailClose').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      if (lastFocusedCard) lastFocusedCard.focus();
+    });
+
+    async function loadProjects() {
+      try {
+        const response = await fetch('index.html');
+        if (!response.ok) throw new Error(`Project source returned ${response.status}`);
+        const markup = await response.text();
+        const source = new DOMParser().parseFromString(markup, 'text/html');
+        const cards = source.querySelectorAll('#projects .project-card');
+        if (!cards.length) throw new Error('No project cards were found in index.html');
+        cards.forEach(sourceCard => {
+          const card = sourceCard.cloneNode(true);
+          card.classList.remove('reveal', 'visible');
+          card.tabIndex = 0;
+          card.setAttribute('role', 'button');
+          card.setAttribute('aria-haspopup', 'dialog');
+          const title = card.querySelector('.project-title')?.textContent.trim();
+          card.setAttribute('aria-label', `View ${title || 'project'} details`);
+          grid.append(card);
+        });
+        filterProjects(activeCategory, false);
+      } catch (error) {
+        console.error('Unable to load the project collection.', error);
+        status.textContent = 'Projects could not be loaded. Please refresh the page or return to the home page.';
+        grid.innerHTML = '<p class="empty-state">We couldn’t load the project collection right now.</p>';
+      }
+    }
+
+    loadProjects();
+  </script>
+</body>
+</html>
