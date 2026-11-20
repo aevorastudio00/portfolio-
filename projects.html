@@ -573,7 +573,7 @@
       <p class="intro">A closer look at digital experiences built across WordPress, Shopify, and custom code.</p>
     </div>
     <div class="projects-hero-visual" aria-hidden="true">
-      <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmavrro.store%2F?w=900&amp;h=570"
+      <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwatchstore-nine.vercel.app%2F?w=900&amp;h=570"
         alt="" width="900" height="570" fetchpriority="high">
     </div>
   </section>
@@ -769,7 +769,13 @@
         if (!response.ok) throw new Error(`Project source returned ${response.status}`);
         const markup = await response.text();
         const source = new DOMParser().parseFromString(markup, 'text/html');
-        const cards = source.querySelectorAll('#projects .project-card');
+        const cards = Array.from(source.querySelectorAll('#projects .project-card')).sort((first, second) => {
+          const firstTitle = first.querySelector('.project-title')?.textContent.trim().toLocaleLowerCase() || '';
+          const secondTitle = second.querySelector('.project-title')?.textContent.trim().toLocaleLowerCase() || '';
+          if (firstTitle === 'watch store') return -1;
+          if (secondTitle === 'watch store') return 1;
+          return 0;
+        });
         if (!cards.length) throw new Error('No project cards were found in index.html');
         cards.forEach(sourceCard => {
           const isFeatured = sourceCard.dataset.featured === 'true';
